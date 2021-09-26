@@ -1,0 +1,9 @@
+body {
+	font-family: Roboto;
+	
+	background: rgb(255,208,126);
+	background: -moz-radial-gradient(circle, rgba(255,208,126,1) 0%, rgba(148,187,233,1) 100%);
+	background: -webkit-radial-gradient(circle, rgba(255,208,126,1) 0%, rgba(148,187,233,1) 100%);
+	background: radial-gradient(circle, rgba(255,208,126,1) 0%, rgba(148,187,233,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffd07e",endColorstr="#94bbe9",GradientType=1);
+}
