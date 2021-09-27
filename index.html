@@ -1,47 +1,76 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-QLPW67QC0C"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-QLPW67QC0C');
+		</script>
+		
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Projetito 1</title>
 
         <link rel="stylesheet" type="text/css" href="style.css">
-    </head>
+		
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="Images/favicon.ico" type="image/x-icon">
+		
+		<!-- Meta tags para Whatsapp -->
+		<meta property="og:locale" content="pt_BR">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="GuessTheFlag">
+		<meta property="og:description" content="Você consegue adivinhar todas as bandeiras do mundo?">
+		<meta property="og:url" content="https://brianmath.github.io/GuessTheFlag/">
+		<meta property="og:image" content="https://i.imgur.com/yIKlpOc.png">
+		<meta property="og:image:alt" content="Logo do site">
+		<meta property="og:image:width" content="512">
+		<meta property="og:image:height" content="512">
+		
+		<!-- Fonte Ubuntu -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+	</head>
 
     <body>
 		<header>
-			<h1>Quiz de Geografia</h1>
+			<h1>Acerte a bandeira</h1>
 		
-			<img src="https://image.freepik.com/vetores-gratis/composicao-de-bolha-do-discurso-com-bandeiras_23-2147885793.jpg" width="200" height="200" alt="Várias bandeiras" id="banner">
-			<h2>Será que você conhece as bandeiras de todos os países???</h2>
+			<img src="Images/location.svg" width="250" height="200" alt="Globo terrestre" id="Banner">
+			<h2>Será que você conhece as bandeiras de todos os países?</h2>
 		</header>
 		
 		<main>	
-			<section class="imgs">
+			<section id="Imgs">
 				<section>
-					<img src="https://purecatamphetamine.github.io/country-flag-icons/3x2/BR.svg" width="100" height="100" alt="Bandeira 0" id="Band0">
+					<img src="https://purecatamphetamine.github.io/country-flag-icons/3x2/BR.svg" width="120" height="80" alt="Bandeira 0" id="Band0">
 					<input type="radio" name="bandeiras" value="0" onclick="adivinhar(0)" disabled>
 				</section>
 				
 				<section>
-					<img src="https://purecatamphetamine.github.io/country-flag-icons/3x2/US.svg" width="100" height="100" alt="Bandeira 1" id="Band1">
+					<img src="https://purecatamphetamine.github.io/country-flag-icons/3x2/KZ.svg" width="120" height="80" alt="Bandeira 1" id="Band1">
 					<input type="radio" name="bandeiras" value="1" onclick="adivinhar(1)" disabled>
 				</section>     
 							   
 				<section>      
-					<img src="https://purecatamphetamine.github.io/country-flag-icons/3x2/JP.svg" width="100" height="100" alt="Bandeira 2" id="Band2">
+					<img src="https://purecatamphetamine.github.io/country-flag-icons/3x2/JP.svg" width="120" height="80" alt="Bandeira 2" id="Band2">
 					<input type="radio" name="bandeiras" value="2" onclick="adivinhar(2)" disabled>
 				</section>
 				
 				<section>      
-					<img src="https://purecatamphetamine.github.io/country-flag-icons/3x2/RU.svg" width="100" height="100" alt="Bandeira 3" id="Band3">
+					<img src="https://purecatamphetamine.github.io/country-flag-icons/3x2/RU.svg" width="120" height="80" alt="Bandeira 3" id="Band3">
 					<input type="radio" name="bandeiras" value="3" onclick="adivinhar(3)" disabled>
 				</section>
 			</section>
 			
 			<section id="Info">
 				<p>Escolha a bandeira do país: <span id="Abreviatura"></span></p>
-				<p id="Resultado"></p>
+				<p id="Resultado">-</p>
 				<button onclick="jogar()">Jogar</button>
 
 				<hr>
@@ -52,6 +81,43 @@
 				</section>
 			</section>
 		</main>
+		
+		<footer>
+        <div id="Creditos">
+            <h3>Créditos:</h3>
+
+            <ul>
+                <li><a href="https://purecatamphetamine.github.io/country-flag-icons/3x2/index.html" target="_blank" rel="noreferrer noopener">Imagens das bandeiras</a></li>
+                <li><a href="https://fonts.google.com" target="_blank" rel="noreferrer noopener">Google fonts</a></li>
+                <li>
+					<a href="https://iconscout.com/illustrations/location" target="_blank" rel="noreferrer noopener">Location Illustration</a> by
+					<a href="https://iconscout.com/contributors/iconscout" target="_blank" rel="noreferrer noopener">Iconscout Store</a>
+                </li>
+				<li>
+					<a href="https://iconscout.com/icons/brazil" target="_blank" rel="noreferrer noopener">Brazil Flag Icon</a> by
+					<a href="https://iconscout.com/contributors/just-icon" target="_blank" rel="noreferrer noopener">Just Icon</a>
+                </li>
+            </ul>
+        </div>
+
+        <div id="Desenvolvedores">
+            <h3>Desenvolvedores:</h3>
+
+            <ul>
+                <li>
+                    Brian Matheus:
+                    <a href="https://www.instagram.com/_brianmatheus_/" target="_blank" rel="noreferrer noopener" title="_brianmatheus_">[Instagram]</a> +
+                    <a href="https://github.com/BrianMath" target="_blank" rel="noreferrer noopener" title="BrianMath">[Github]</a>
+                </li>
+            
+                <li>
+                    Vitor Hugo:
+                    <a href="https://www.instagram.com/vhf273/" target="_blank" rel="noreferrer noopener" title="vhf273">[Instagram]</a> +
+                    <a href="https://github.com/Bateria-instantanea" target="_blank" rel="noreferrer noopener" title="Bateria-instantanea">[Github]</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
 		
 		<script src="script.js"></script>
     </body>

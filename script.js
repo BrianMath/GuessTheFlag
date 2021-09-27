@@ -40,7 +40,7 @@ function jogar() {
 	// Apaga os seguintes pares de sessionStorage e p#Resultado
 	sessionStorage.removeItem("Abreviacao")
 	sessionStorage.removeItem("Posicao")
-	result.innerHTML = ""
+	result.innerHTML = "-"
 	
 	// Ativa os radiobuttons
 	let radioButtons = document.getElementsByTagName("input")
@@ -66,7 +66,7 @@ function jogar() {
 
 	// *MUDAR DEPOIS* Mostra a abreviatura do país certo
 	let pais = paises[siglas.indexOf(sessionStorage.getItem("Abreviacao"))]
-	abrev.innerHTML = `<strong>${pais}</strong>`
+	abrev.innerHTML = `${pais}`
 	
 	band0.src = `https://purecatamphetamine.github.io/country-flag-icons/3x2/${bandeirasUnicas[0]}.svg`
 	band1.src = `https://purecatamphetamine.github.io/country-flag-icons/3x2/${bandeirasUnicas[1]}.svg`
@@ -83,7 +83,8 @@ function adivinhar(posBandeira) {
 	}
 	
 	if (posBandeira === Number(sessionStorage.getItem("Posicao"))) {
-		result.innerHTML = "<strong>ACERTOU! :)</strong>"
+		result.style.color = "green"
+		result.innerHTML = "ACERTOU! :)"
 		
 		// Aumenta a pontuação da partida e altera span#Pontos
 		let pts = Number(sessionStorage.getItem("Pontos"))
@@ -96,7 +97,8 @@ function adivinhar(posBandeira) {
 			localStorage.setItem("MaxPontos", pts)
 		}
 	} else {
-		result.innerHTML = "<strong>ERROU! :(</strong>"
+		result.style.color = "red"
+		result.innerHTML = "ERROU! :("
 		
 		// Define a nova pontuação máxima em span#MaxPontos
 		spanMaxPontos.innerHTML = localStorage.getItem("MaxPontos")

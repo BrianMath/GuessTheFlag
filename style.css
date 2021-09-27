@@ -1,9 +1,125 @@
+/* --- Raiz --- */
 body {
-	font-family: Roboto;
+	margin: 0;
+	
+	text-align: center;
+	font-family: 'Ubuntu', Roboto, sans-serif;
+	font-size: 16px;
 	
 	background: rgb(255,208,126);
 	background: -moz-radial-gradient(circle, rgba(255,208,126,1) 0%, rgba(148,187,233,1) 100%);
 	background: -webkit-radial-gradient(circle, rgba(255,208,126,1) 0%, rgba(148,187,233,1) 100%);
 	background: radial-gradient(circle, rgba(255,208,126,1) 0%, rgba(148,187,233,1) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffd07e",endColorstr="#94bbe9",GradientType=1);
+}
+
+/* --- Header --- */
+h1 {
+	margin-bottom: 0;
+}
+
+h2 {
+	margin: 0 auto 30px;
+	padding: 5px;
+}
+
+#Banner {
+	margin: 0;
+}
+
+/* --- Main --- */
+main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	
+	margin: 0 auto;
+	max-width: 700px;
+}
+
+	/* --- Section#Imgs --- */
+#Imgs {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr;	
+}
+
+#Imgs section {
+	margin-bottom: 10px;	
+}
+
+input {
+	width: 25px;
+	height: 25px;
+}
+
+	/* --- Section#Info --- */
+#Info p {
+	font-size: 1.2rem;
+}
+
+#Abreviatura, #Resultado, #Pontos, #MaxPontos {
+	font-weight: 700;
+}
+
+button {
+	font-family: 'Ubuntu', Roboto, sans-serif;
+	font-size: 1rem;
+	font-weight: 700;
+	
+	width: 100px;
+	height: 30px;
+	
+	cursor: pointer;
+}
+
+hr {
+	border: 1px solid white;
+}
+
+/* --- Footer --- */
+footer {
+    display: flex;
+    justify-content: space-between;
+	margin-top: 30px;
+	
+	background-color: #eceaea;
+}
+
+ul {
+	padding: 25px;
+	display: flex;
+	flex-direction: column;
+    align-items: flex-start;
+}
+
+li {
+	font-size: 1.2rem;
+}
+
+a, a:visited {
+    color: #073cff;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+a:hover, a:active {
+    color: #9b04cc;
+    text-decoration: underline;
+}
+
+/* --- Tela grande --- */
+@media (min-width: 550px) {
+	#Imgs {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+	}
+	
+	#Info p {
+		font-size: 1.5rem;
+	}
+	
+	li {
+		font-size: 1.3rem;
+	}
 }
