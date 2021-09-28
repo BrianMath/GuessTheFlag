@@ -1,4 +1,4 @@
-/* --- Raiz --- */
+/* --- Global --- */
 body {
 	margin: 0;
 	
@@ -13,14 +13,41 @@ body {
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffd07e",endColorstr="#94bbe9",GradientType=1);
 }
 
-/* --- Header --- */
-h1 {
-	margin-bottom: 0;
+main, header {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	
+	margin: 0 auto;
+	max-width: 700px;
 }
 
-h2 {
-	margin: 0 auto 30px;
-	padding: 5px;
+h1, h2, ul {
+	margin: 0;
+}
+
+p {
+	font-size: 1.2rem;
+}
+
+ul {
+	padding: 25px;
+	display: flex;
+	flex-direction: column;
+    align-items: flex-start;
+}
+
+li {
+	font-size: 1.2rem;
+}
+
+/* --- Header --- */
+header {
+	align-items: center;
+}
+
+header p, header ul {
+	text-align: justify;
 }
 
 #Banner {
@@ -28,13 +55,10 @@ h2 {
 }
 
 /* --- Main --- */
-main {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	
-	margin: 0 auto;
-	max-width: 700px;
+hr {
+	border: 1px solid white;
+	display: block;
+	width: 100%;
 }
 
 	/* --- Section#Imgs --- */
@@ -54,10 +78,6 @@ input {
 }
 
 	/* --- Section#Info --- */
-#Info p {
-	font-size: 1.2rem;
-}
-
 #Abreviatura, #Resultado, #Pontos, #MaxPontos {
 	font-weight: 700;
 }
@@ -73,10 +93,6 @@ button {
 	cursor: pointer;
 }
 
-hr {
-	border: 1px solid white;
-}
-
 /* --- Footer --- */
 footer {
     display: flex;
@@ -84,17 +100,6 @@ footer {
 	margin-top: 30px;
 	
 	background-color: #eceaea;
-}
-
-ul {
-	padding: 25px;
-	display: flex;
-	flex-direction: column;
-    align-items: flex-start;
-}
-
-li {
-	font-size: 1.2rem;
 }
 
 a, a:visited {
@@ -115,7 +120,7 @@ a:hover, a:active {
 		grid-template-rows: 1fr 1fr;
 	}
 	
-	#Info p {
+	p {
 		font-size: 1.5rem;
 	}
 	

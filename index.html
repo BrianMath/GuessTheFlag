@@ -42,10 +42,22 @@
 			<h1>Acerte a bandeira</h1>
 		
 			<img src="Images/location.svg" width="250" height="200" alt="Globo terrestre" id="Banner">
-			<h2>Será que você conhece as bandeiras de todos os países?</h2>
+			<p>
+				Atualmente existem <b>mais de 190</b> países no mundo e cada um possui a sua bandeira.
+				Nesse site você poderá aprender várias delas e para isso criamos um jogo para te ajudar e te testar.
+				Esperamos que você se divirta jogando e aprendendo as bandeiras dos países.
+			</p>
+			<h2>Instruções</h2>
+			<ul>
+				<li>Clique no botão <b>Jogar</b> para sortear um novo país e depois clique no botão circular ao lado da bandeira escolhida</li>
+				<li>No PC, use a tecla 'Enter' para sortear mais facilmente</li>
+				<li>Algumas ilhas e países novos podem aparecer com a bandeira de seus colonizadores, tenha isso em mente</li>
+			</ul>
 		</header>
 		
-		<main>	
+		<main>
+			<hr>
+			
 			<section id="Imgs">
 				<section>
 					<img src="https://purecatamphetamine.github.io/country-flag-icons/3x2/BR.svg" width="120" height="80" alt="Bandeira 0" id="Band0">
@@ -71,7 +83,7 @@
 			<section id="Info">
 				<p>Escolha a bandeira do país: <span id="Abreviatura"></span></p>
 				<p id="Resultado">-</p>
-				<button onclick="jogar()">Jogar</button>
+				<button onclick="jogar()" id="Jogar">Jogar</button>
 
 				<hr>
 				
@@ -83,42 +95,50 @@
 		</main>
 		
 		<footer>
-        <div id="Creditos">
-            <h3>Créditos:</h3>
+			<div id="Creditos">
+				<h3>Créditos:</h3>
 
-            <ul>
-                <li><a href="https://purecatamphetamine.github.io/country-flag-icons/3x2/index.html" target="_blank" rel="noreferrer noopener">Imagens das bandeiras</a></li>
-                <li><a href="https://fonts.google.com" target="_blank" rel="noreferrer noopener">Google fonts</a></li>
-                <li>
-					<a href="https://iconscout.com/illustrations/location" target="_blank" rel="noreferrer noopener">Location Illustration</a> by
-					<a href="https://iconscout.com/contributors/iconscout" target="_blank" rel="noreferrer noopener">Iconscout Store</a>
-                </li>
-				<li>
-					<a href="https://iconscout.com/icons/brazil" target="_blank" rel="noreferrer noopener">Brazil Flag Icon</a> by
-					<a href="https://iconscout.com/contributors/just-icon" target="_blank" rel="noreferrer noopener">Just Icon</a>
-                </li>
-            </ul>
-        </div>
+				<ul>
+					<li><a href="https://purecatamphetamine.github.io/country-flag-icons/3x2/index.html" target="_blank" rel="noreferrer noopener">Imagens das bandeiras</a></li>
+					<li><a href="https://fonts.google.com" target="_blank" rel="noreferrer noopener">Google fonts</a></li>
+					<li>
+						<a href="https://iconscout.com/illustrations/location" target="_blank" rel="noreferrer noopener">Location Illustration</a> by
+						<a href="https://iconscout.com/contributors/iconscout" target="_blank" rel="noreferrer noopener">Iconscout Store</a>
+					</li>
+					<li>
+						<a href="https://iconscout.com/icons/brazil" target="_blank" rel="noreferrer noopener">Brazil Flag Icon</a> by
+						<a href="https://iconscout.com/contributors/just-icon" target="_blank" rel="noreferrer noopener">Just Icon</a>
+					</li>
+				</ul>
+			</div>
 
-        <div id="Desenvolvedores">
-            <h3>Desenvolvedores:</h3>
+			<div id="Desenvolvedores">
+				<h3>Desenvolvedores:</h3>
 
-            <ul>
-                <li>
-                    Brian Matheus:
-                    <a href="https://www.instagram.com/_brianmatheus_/" target="_blank" rel="noreferrer noopener" title="_brianmatheus_">[Instagram]</a> +
-                    <a href="https://github.com/BrianMath" target="_blank" rel="noreferrer noopener" title="BrianMath">[Github]</a>
-                </li>
-            
-                <li>
-                    Vitor Hugo:
-                    <a href="https://www.instagram.com/vhf273/" target="_blank" rel="noreferrer noopener" title="vhf273">[Instagram]</a> +
-                    <a href="https://github.com/Bateria-instantanea" target="_blank" rel="noreferrer noopener" title="Bateria-instantanea">[Github]</a>
-                </li>
-            </ul>
-        </div>
-    </footer>
+				<ul>
+					<li>
+						Brian Matheus:
+						<a href="https://www.instagram.com/_brianmatheus_/" target="_blank" rel="noreferrer noopener" title="_brianmatheus_">[Instagram]</a> +
+						<a href="https://github.com/BrianMath" target="_blank" rel="noreferrer noopener" title="BrianMath">[Github]</a>
+					</li>
+				
+					<li>
+						Vitor Hugo:
+						<a href="https://www.instagram.com/vhf273/" target="_blank" rel="noreferrer noopener" title="vhf273">[Instagram]</a> +
+						<a href="https://github.com/Bateria-instantanea" target="_blank" rel="noreferrer noopener" title="Bateria-instantanea">[Github]</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		
+		<div id="Visits"></div>
 		
 		<script src="script.js"></script>
+		<script>
+			function cb(response) {
+				document.getElementById('Visits').innerText = response.value;
+			}
+		</script>
+		<script async src="https://api.countapi.xyz/hit/brianmath.github.io/GuessTheFlag?callback=cb"></script>
     </body>
 </html>
