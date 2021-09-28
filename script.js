@@ -29,7 +29,7 @@ let botaoJogar = document.querySelector("button#Jogar")
 window.addEventListener("keyup", function(event) {
 	event.preventDefault()
 	if (event.keyCode === 13) { // Tecla enter
-		jogar()
+		botaoJogar.click()
 	}
 })
 
@@ -101,7 +101,8 @@ function adivinhar(posBandeira) {
 	// Ativa o botão de jogar
 	botaoJogar.removeAttribute("disabled")
 	
-	if (posBandeira === Number(sessionStorage.getItem("Posicao"))) {
+	let pos = Number(sessionStorage.getItem("Posicao"))
+	if (posBandeira === pos) {
 		result.style.color = "green"
 		result.innerHTML = "ACERTOU! :)"
 		
@@ -117,7 +118,7 @@ function adivinhar(posBandeira) {
 		}
 	} else {
 		result.style.color = "red"
-		result.innerHTML = "ERROU! :("
+		result.innerHTML = `ERROU! :( A bandeira certa é a ${pos + 1}`
 		
 		// Define a nova pontuação máxima em span#MaxPontos
 		spanMaxPontos.innerHTML = localStorage.getItem("MaxPontos")

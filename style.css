@@ -80,6 +80,11 @@ hr {
 	margin-bottom: 10px;	
 }
 
+#Imgs span {
+	display: inline-block;
+	transform: translate(0, -65px);
+}
+
 input {
 	width: 25px;
 	height: 25px;
