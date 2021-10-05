@@ -22,14 +22,28 @@ let band2 = document.querySelector("img#Band2")
 let band3 = document.querySelector("img#Band3")
 let abrev = document.querySelector("span#Abreviatura")
 let result = document.querySelector("p#Resultado")
+
 let radioButtons = document.getElementsByTagName("input")
 let botaoJogar = document.querySelector("button#Jogar")
 
 // Botão de jogar acionado por tecla 'enter'
 window.addEventListener("keyup", function(event) {
 	event.preventDefault()
+	
 	if (event.keyCode === 13) { // Tecla enter
 		botaoJogar.click()
+	}
+	if (event.keyCode === 49 || event.keyCode === 97) { // Tecla 1
+		radioButtons[0].click()
+	}
+	if (event.keyCode === 50 || event.keyCode === 98) { // Tecla 2
+		radioButtons[1].click()
+	}
+	if (event.keyCode === 51 || event.keyCode === 99) { // Tecla 3
+		radioButtons[2].click()
+	}
+	if (event.keyCode === 52 || event.keyCode === 100) { // Tecla 4
+		radioButtons[3].click()
 	}
 })
 
