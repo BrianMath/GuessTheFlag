@@ -1,6 +1,7 @@
 /* --- Global --- */
 body {
 	margin: 0;
+	padding: 0;
 	
 	text-align: center;
 	font-family: 'Ubuntu', Roboto, sans-serif;
@@ -13,7 +14,7 @@ body {
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffd07e",endColorstr="#94bbe9",GradientType=1);
 }
 
-main, header {
+main, #Instrucoes {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -45,16 +46,16 @@ li {
 	font-size: 1.2rem;
 }
 
-/* --- Header --- */
-header {
+/* --- section#Instrucoes --- */
+#Instrucoes {
 	align-items: center;
 }
 
-header p, header ul {
+#Instrucoes p, #Instrucoes ul {
 	text-align: justify;
 }
 
-header p {
+#Instrucoes p {
 	padding: 12px;
 }
 
