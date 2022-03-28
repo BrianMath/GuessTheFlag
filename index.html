@@ -107,7 +107,7 @@
 			</section>
 			
 			<section id="Info">
-				<p>Escolha a bandeira do país: <span id="Abreviatura"></span></p>
+				<p>Escolha a bandeira do país: <span id="NomePais"></span></p>
 				<p id="Resultado">-</p>
 				<button onclick="jogar()" id="Jogar">Jogar</button>
 
@@ -135,6 +135,9 @@
 						<a href="https://iconscout.com/icons/brazil" target="_blank" rel="noreferrer noopener">Brazil Flag Icon</a> by
 						<a href="https://iconscout.com/contributors/just-icon" target="_blank" rel="noreferrer noopener">Just Icon</a>
 					</li>
+					<li>
+						Sons de acertar e errar por <a href="https://mixkit.co/" target="_blank" rel="noreferrer noopener">Mixkit</a>
+					</li>
 				</ul>
 			</div>
 
@@ -160,6 +163,7 @@
 		<div id="Visits"></div>
 		
 		<script src="script.js"></script>
+		
 		<script>
 			function cb(response) {
 				document.getElementById('Visits').innerText = response.value;
