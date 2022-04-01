@@ -151,6 +151,9 @@ function adivinhar(posChuteBandeira) {
 		if (localStorage.getItem("MaxPontos") < pts) {
 			localStorage.setItem("MaxPontos", pts)
 		}
+
+		setTimeout(jogar, 3000);
+		showNextRound(3);
 	} else {
 		somPerder.play()
 
@@ -167,5 +170,16 @@ function adivinhar(posChuteBandeira) {
 		// Apaga os seguintes pares de sessionStorage
 		sessionStorage.removeItem("Abreviacao")
 		sessionStorage.removeItem("Posicao")
+
+		setTimeout(jogar, 10000);
+		showNextRound(10);
+	}
+
+	function showNextRound(time, callback) {
+		callback = callback || function(){};
+		var int = setInterval(function() {
+			document.getElementById("NovaRodada").innerHTML = "Nova rodada em " + (time - 1) +  " segundos";
+			time-- || (clearInterval(int), callback(), document.getElementById("NovaRodada").innerHTML = "");
+		}, 1000);
 	}
 }
