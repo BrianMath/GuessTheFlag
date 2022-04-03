@@ -11,7 +11,7 @@ const objeto = JSON.parse(json)
 
 const paises = []
 const siglas = []
-/* --- */
+/* Preencher arrays 'paises' e 'siglas' com o json */
 for (let obj of objeto) {
 	paises.push(obj.nome_pais)
 }
@@ -28,6 +28,7 @@ let nomePais = document.querySelector("span#NomePais")
 let result = document.querySelector("p#Resultado")
 
 let radioButtons = document.getElementsByTagName("input")
+let images = document.querySelectorAll("#Imgs img")
 let botaoJogar = document.querySelector("button#Jogar")
 
 // Botão de jogar acionado por tecla 'enter'
@@ -94,14 +95,20 @@ function jogar() {
 	// Ativa os radiobuttons
 	for (rb of radioButtons) {
 		rb.removeAttribute("disabled")
+		rb.classList.toggle("Intocavel")
+	}
+	// Ativa os cliques nas imagens
+	for (img of images) {
+		img.classList.toggle("Intocavel")
 	}
 	
 	// Desativa o botão de jogar
 	botaoJogar.setAttribute("disabled", true)
+	botaoJogar.classList.toggle("Intocavel")
 
 	// Sorteio de 4 países únicos
 	const bandeirasUnicas = []
-	while (bandeirasUnicas.length < 4){
+	while (bandeirasUnicas.length < 4) {
 		let sigla = siglas[Math.floor(Math.random() * siglas.length)] // Escolhe alguma sigla em [siglas]
 		
 		if (bandeirasUnicas.indexOf(sigla) === -1) { // Se a sigla não estiver dentro de [bandeirasUnicas] ...
@@ -129,13 +136,15 @@ function adivinhar(posChuteBandeira) {
 	for (rb of radioButtons) {
 		rb.setAttribute("disabled", true)
 		rb.checked = false
+		rb.classList.toggle("Intocavel")
+	}
+	// Desativa o clique nas imagens
+	for (img of images) {
+		img.classList.toggle("Intocavel")
 	}
 	
-	// Ativa o botão de jogar
-	botaoJogar.removeAttribute("disabled")
-	
-	let pos = Number(sessionStorage.getItem("Posicao"))
-	if (posChuteBandeira === pos) {
+	let posBandeiraSorteada = Number(sessionStorage.getItem("Posicao"))
+	if (posChuteBandeira === posBandeiraSorteada) {
 		somGanhar.play()
 
 		result.style.color = "green"
@@ -152,13 +161,15 @@ function adivinhar(posChuteBandeira) {
 			localStorage.setItem("MaxPontos", pts)
 		}
 
-		setTimeout(jogar, 3000);
-		showNextRound(3);
+		setTimeout(jogar, 3000); // Joga de novo
+		document.getElementById("Timer").innerHTML = `<img src="./Images/timer.svg" alt="Timer">
+		<p id="NovaRodada"></p>` // Mostra o relógio e o parágrafo
+		showNextRound(3);        // Mostra o timer até a nova jogada
 	} else {
 		somPerder.play()
 
 		result.style.color = "red"
-		result.innerHTML = `ERROU! :( A bandeira certa é a ${pos + 1}`
+		result.innerHTML = `ERROU! :( A bandeira certa é a ${posBandeiraSorteada + 1}`
 		
 		// Define a nova pontuação máxima em span#MaxPontos
 		spanMaxPontos.innerHTML = localStorage.getItem("MaxPontos")
@@ -171,15 +182,16 @@ function adivinhar(posChuteBandeira) {
 		sessionStorage.removeItem("Abreviacao")
 		sessionStorage.removeItem("Posicao")
 
-		setTimeout(jogar, 10000);
-		showNextRound(10);
+		// Ativa o botão de jogar
+		botaoJogar.removeAttribute("disabled")
+		botaoJogar.classList.toggle("Intocavel")
 	}
 
 	function showNextRound(time, callback) {
 		callback = callback || function(){};
 		var int = setInterval(function() {
-			document.getElementById("NovaRodada").innerHTML = "Nova rodada em " + (time - 1) +  " segundos";
-			time-- || (clearInterval(int), callback(), document.getElementById("NovaRodada").innerHTML = "");
+			document.getElementById("NovaRodada").innerHTML = `${time}s`;
+			time-- || (clearInterval(int), callback(), document.querySelector("#Timer").innerHTML = "");
 		}, 1000);
 	}
 }

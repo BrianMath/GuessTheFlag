@@ -46,6 +46,10 @@ li {
 	font-size: 1.2rem;
 }
 
+.Intocavel {
+	pointer-events: none;
+}
+
 /* --- section#Instrucoes --- */
 #Instrucoes {
 	align-items: center;
@@ -86,6 +90,10 @@ hr {
 	transform: translate(0, -65px);
 }
 
+img, input {
+	cursor: pointer;
+}
+
 input {
 	width: 25px;
 	height: 25px;
@@ -98,6 +106,12 @@ input {
 
 #Info p:first-child {
 	padding: 3px;
+}
+
+#Timer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 button {

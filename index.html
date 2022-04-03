@@ -36,6 +36,7 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	</head>
 
     <body>
@@ -83,33 +84,36 @@
 			<section id="Imgs">
 				<section>
 					<span>1</span>
-					<img src="https://purecatamphetamine.github.io/country-flag-icons/3x2/BR.svg" onclick="adivinhar(0)" width="120" height="80" alt="Bandeira 0" id="Band0">
-					<input type="radio" name="bandeiras" value="0" onclick="adivinhar(0)" disabled>
+					<img src="https://purecatamphetamine.github.io/country-flag-icons/3x2/BR.svg" onclick="adivinhar(0)" width="120" height="80" alt="Bandeira 0" id="Band0" class="Intocavel">
+					<input type="radio" name="bandeiras" value="0" onclick="adivinhar(0)" disabled class="Intocavel">
 				</section>
 				
 				<section>
 					<span>2</span>
-					<img src="https://purecatamphetamine.github.io/country-flag-icons/3x2/PA.svg" onclick="adivinhar(1)" width="120" height="80" alt="Bandeira 1" id="Band1">
-					<input type="radio" name="bandeiras" value="1" onclick="adivinhar(1)" disabled>
+					<img src="https://purecatamphetamine.github.io/country-flag-icons/3x2/PA.svg" onclick="adivinhar(1)" width="120" height="80" alt="Bandeira 1" id="Band1" class="Intocavel">
+					<input type="radio" name="bandeiras" value="1" onclick="adivinhar(1)" disabled class="Intocavel">
 				</section>     
 							   
 				<section>
 					<span>3</span>
-					<img src="https://purecatamphetamine.github.io/country-flag-icons/3x2/JP.svg" onclick="adivinhar(2)" width="120" height="80" alt="Bandeira 2" id="Band2">
-					<input type="radio" name="bandeiras" value="2" onclick="adivinhar(2)" disabled>
+					<img src="https://purecatamphetamine.github.io/country-flag-icons/3x2/JP.svg" onclick="adivinhar(2)" width="120" height="80" alt="Bandeira 2" id="Band2" class="Intocavel">
+					<input type="radio" name="bandeiras" value="2" onclick="adivinhar(2)" disabled class="Intocavel">
 				</section>
 				
 				<section>
 					<span>4</span>
-					<img src="https://purecatamphetamine.github.io/country-flag-icons/3x2/RU.svg" onclick="adivinhar(3)" width="120" height="80" alt="Bandeira 3" id="Band3">
-					<input type="radio" name="bandeiras" value="3" onclick="adivinhar(3)" disabled>
+					<img src="https://purecatamphetamine.github.io/country-flag-icons/3x2/RU.svg" onclick="adivinhar(3)" width="120" height="80" alt="Bandeira 3" id="Band3" class="Intocavel">
+					<input type="radio" name="bandeiras" value="3" onclick="adivinhar(3)" disabled class="Intocavel">
 				</section>
 			</section>
 			
 			<section id="Info">
 				<p>Escolha a bandeira do país: <span id="NomePais"></span></p>
 				<p id="Resultado">-</p>
-				<p id="NovaRodada"></p>
+				
+				<div id="Timer">
+					<p id="NovaRodada"></p>
+				</div>
 				<button onclick="jogar()" id="Jogar">Jogar</button>
 
 				<hr>
@@ -165,11 +169,11 @@
 		
 		<script src="script.js"></script>
 		
-		<script>
+		<!-- <script>
 			function cb(response) {
 				document.getElementById('Visits').innerText = response.value;
 			}
 		</script>
-		<script async src="https://api.countapi.xyz/hit/brianmath.github.io/GuessTheFlag1?callback=cb"></script>
+		<script async src="https://api.countapi.xyz/hit/brianmath.github.io/GuessTheFlag1?callback=cb"></script> -->
     </body>
 </html>
