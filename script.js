@@ -95,16 +95,16 @@ function jogar() {
 	// Ativa os radiobuttons
 	for (rb of radioButtons) {
 		rb.removeAttribute("disabled")
-		rb.classList.toggle("Intocavel")
+		rb.classList.remove("Intocavel")
 	}
 	// Ativa os cliques nas imagens
 	for (img of images) {
-		img.classList.toggle("Intocavel")
+		img.classList.remove("Intocavel")
 	}
 	
 	// Desativa o botão de jogar
 	botaoJogar.setAttribute("disabled", true)
-	botaoJogar.classList.toggle("Intocavel")
+	botaoJogar.classList.add("Intocavel")
 
 	// Sorteio de 4 países únicos
 	const bandeirasUnicas = []
@@ -136,11 +136,11 @@ function adivinhar(posChuteBandeira) {
 	for (rb of radioButtons) {
 		rb.setAttribute("disabled", true)
 		rb.checked = false
-		rb.classList.toggle("Intocavel")
+		rb.classList.add("Intocavel")
 	}
 	// Desativa o clique nas imagens
 	for (img of images) {
-		img.classList.toggle("Intocavel")
+		img.classList.add("Intocavel")
 	}
 	
 	let posBandeiraSorteada = Number(sessionStorage.getItem("Posicao"))
@@ -184,7 +184,7 @@ function adivinhar(posChuteBandeira) {
 
 		// Ativa o botão de jogar
 		botaoJogar.removeAttribute("disabled")
-		botaoJogar.classList.toggle("Intocavel")
+		botaoJogar.classList.remove("Intocavel")
 	}
 
 	function showNextRound(time, callback) {
