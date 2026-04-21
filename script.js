@@ -145,6 +145,7 @@ function adivinhar(posChuteBandeira) {
 	
 	let posBandeiraSorteada = Number(sessionStorage.getItem("Posicao"))
 	if (posChuteBandeira === posBandeiraSorteada) {
+		somGanhar.currentTime = 0;
 		somGanhar.play()
 
 		result.style.color = "green"
@@ -161,11 +162,12 @@ function adivinhar(posChuteBandeira) {
 			localStorage.setItem("MaxPontos", pts)
 		}
 
-		setTimeout(jogar, 3000); // Joga de novo
-		document.getElementById("Timer").innerHTML = `<img src="./Images/timer.svg" alt="Timer">
-		<p id="NovaRodada"></p>` // Mostra o relógio e o parágrafo
-		showNextRound(3);        // Mostra o timer até a nova jogada
+		setTimeout(jogar, 1000); // Joga de novo
+		// document.getElementById("Timer").innerHTML = `<img src="./Images/timer.svg" alt="Timer">
+		// <p id="NovaRodada"></p>` // Mostra o relógio e o parágrafo
+		// showNextRound(1);        // Mostra o timer até a nova jogada
 	} else {
+		somPerder.currentTime = 0;
 		somPerder.play()
 
 		result.style.color = "red"
